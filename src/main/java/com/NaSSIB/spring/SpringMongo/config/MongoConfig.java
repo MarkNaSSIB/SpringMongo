@@ -9,7 +9,6 @@ import com.mongodb.ServerApi;
 import com.mongodb.ServerApiVersion;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
 
 @Configuration
 public class MongoConfig {
@@ -23,7 +22,7 @@ public class MongoConfig {
         MongoClientSettings.builder().applyConnectionString(connectionString)
             .serverApi(ServerApi.builder().version(ServerApiVersion.V1).build()).build();
     MongoClient mongoClient = MongoClients.create(settings);
-    MongoDatabase database = mongoClient.getDatabase("test");
+    // MongoDatabase database = mongoClient.getDatabase("test");
 
     return mongoClient;
 
